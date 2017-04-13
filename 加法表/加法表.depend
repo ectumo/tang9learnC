@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1490521444 source:g:\编程学习\课程练习\加法表\main.c
+	<stdio.h>
+	<stdlib.h>
+

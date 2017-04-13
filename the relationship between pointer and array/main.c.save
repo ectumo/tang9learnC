@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i;
+    int nums[6] = {100, 99, 88, 77, 66, 55};
+    int nums1[6] = {1100, 199, 188, 177, 166, 155};
+    int * ptr_nums; //定义指针
+    int * ptr_nums1;// int * ptr_nums = & nums[0]; 等价于int * ptr_nums = nums;
+    //ptr_nums = &nums[0]; //将nums[0]赋值给指针变量ptr_nums;
+
+    //ptr_nums = &nums[0];
+    //ptr_nums1 = &nums1[0];// 等价于ptr_nums1 = nums1;
+    ptr_nums = nums;
+    ptr_nums1 = nums1;
+    //printf("当前ptr_nums所指向的地址: %p\t nums[0]的内存地址是%p\n",ptr_nums ,&nums);
+    //printf("当前ptr_nums1所指向的地址: %p\t nums1[0]的内存地址是%p\n",ptr_nums1, &nums1);
+    //printf("nums的地址是: %p\tnums1的地址是: %p\n",&nums, &nums1);
+    //printf("nums的地址是: %p\tnums1的地址是: %p\n",ptr_nums, ptr_nums1);
+
+    for (i = 0; i < 6; i++)
+    {
+        printf("数组num第%d的个元素的值为: %d\t地址为: %p\t",i + 1, ptr_nums[i], &ptr_nums[i]);
+        printf("数组num1第%d的个元素的值为: %d\t地址为: %p\n",i + 1, ptr_nums1[i], &ptr_nums1[i]);
+
+    }
+    printf("\n############################################################################################################\n\n");
+    for (i = 0; i < 6; i++)
+    {
+        printf("数组num第%d的个元素的值为: %d\t地址为: %p\t",i + 1, *(ptr_nums + i), ptr_nums + i);
+        printf("数组num1第%d的个元素的值为: %d\t地址为: %p\n",i + 1,*(ptr_nums1 + i), ptr_nums1 + i);
+
+    }
+    printf("\n############################################################################################################\n\n");
+    for (i = 0; i < 6; i++)
+    {
+        printf("数组num第%d的个元素的值为: %d\t地址为: %p\t",i + 1, *ptr_nums++, ptr_nums);
+        printf("数组num1第%d的个元素的值为: %d\t地址为: %p\n",i + 1,*ptr_nums1++, ptr_nums1);
+
+    }
+
+
+
+
+
+
+
+    return (0);
+}

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1491217545 source:g:\±à³ÌÑ§Ï°\¿Î³ÌÁ·Ï°\emperordemo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	<windows.h>
+	<mmsystem.h>
+
