@@ -8,3 +8,12 @@
 	<windows.h>
 	<mmsystem.h>
 
+1491218003 source:d:\program files\git\tang9learnc\emperordemo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	<windows.h>
+	<mmsystem.h>
+

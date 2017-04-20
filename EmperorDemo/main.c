@@ -8,6 +8,7 @@
 #pragma comment (lib, "Winmm.Lib")
 #define MAX 8
 
+///招满MAX=8个妃子，且有一个妃子成为皇后游戏胜利
 int main()
 {
     int i, j, temp; // 循环变量和临时整型;
