@@ -93,14 +93,14 @@ int main (void)
            zeroindex[i] = 8;
        }
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("转换结束\n");
-*/
+
     //比对zeroindex中的零是否连续，如果连续就向前合并
     for (i = 0; i < numlen - 1; i++)
     {
@@ -109,14 +109,14 @@ int main (void)
             zeroindex[i] = 1;
         }
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("合并结束\n");
-*/
+
     //去除头部无效零,直到首位数字非零
 
     for (i = 0; i < numlen - 1; i++)
@@ -131,14 +131,14 @@ int main (void)
             break;
         }
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("头部去除\n");
-*/
+
     //小数点后头部无效零去除，直到小数点后首位非零
     if (indexpoint != -1)
     {
@@ -155,14 +155,14 @@ int main (void)
             }
         }
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("小数头部去除\n");
-*/
+
     //尾部无效零去除
     for (i = numlen; i > 1; i--)
     {
@@ -176,14 +176,14 @@ int main (void)
             break;
         }
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("尾部转换结束\n");
-*/
+
     //将zeroindex中可以零转换为9,只有当index中为9时才需要打印
      for (i = 0; i < numlen; i++)
     {
@@ -192,14 +192,14 @@ int main (void)
             zeroindex[i] = 9;
         }
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("转换结束\n");
-*/
+
     //判断是否需要调整个位数的状态
     temp = 0;     //此处作为统计有效数的计数用
     for (i = 0; i < numlen; i++)
@@ -225,14 +225,15 @@ int main (void)
     {
         zeroindex[numilen - 1] = 9;   //数字为全零，或零和小数点时，调整个位打印标签
     }
-/*
+
     //打印测试
     for (i = 0; i < numlen; i++)
     {
         printf("%d", zeroindex[i]);
     }
     printf("最终转换结束\n");
-*/
+
+
     /// 数据格式化完毕，//////////////////////////////////////////////////////////
 
     //打印阿拉伯数字
@@ -279,8 +280,12 @@ int main (void)
                 printf("%s", upperbit1[count - i - 1]);
             }
         }
+        //尾数全为零时当大于万位时，最高位单位补足
+        if(zeroindex[count]==1&&numilen>4)
+            printf("%s",upperbit1[numilen/4+2]);
         numilen -= count; //转换需要减去%4的额外的位数
     }
+
     //转换成中文汉字第二部分 %4等于0的额外位数
     i = numilen;  //循环变量i 等于 剩余转换位数的最高位
     while (i > 0)
